@@ -275,7 +275,21 @@ document.addEventListener('DOMContentLoaded', function() {
     customMainSlider.thumbs.swiper = customThumbnailSlider;
 });
 
-  /*==================== Type Text ====================*/ 
+  /*==================== HONOR ON CLICK ====================*/ 
+  document.addEventListener("DOMContentLoaded", function() {
+    const secondImages = document.querySelectorAll('.honors ul li img:nth-child(2)');
+    secondImages.forEach(img => {
+        img.addEventListener('click', function(event) {
+            // Prevent default behavior of the anchor tag
+            event.preventDefault();
+            // Get the URL from the anchor tag's href attribute
+            const url = this.parentNode.href;
+            // Open the URL in a new tab
+            window.open(url, '_blank');
+        });
+    });
+});
+
 //   document.addEventListener('DOMContentLoaded', function() {
 //     var typingEffect = new Typed(".typedText", {
 //       strings: ["mechanical engineer", "metallurgist", "youtuber"],
