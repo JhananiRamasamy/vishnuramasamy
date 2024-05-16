@@ -893,7 +893,7 @@ img {
 .work__modal-content {
   position: relative; 
   width: 75%; 
-  height: 95%; 
+  height: 75%; 
   max-width: 800px;
   max-height: 800px;
   background-color: var(--container-color);
@@ -902,7 +902,7 @@ img {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   transition: .3s;
   overflow: hidden;
-  padding: 5rem;
+  padding: 10rem;
 }
 
 .work__modal-works {
@@ -1496,10 +1496,10 @@ padding: 0;
   }
   .work__modal-content {
     width: 90%; 
-    height: 90%; 
+    height: 75%; 
     max-width: 90%; 
     max-height: 90%; 
-    padding: 2rem;
+    padding: 5rem;
   }
   .workbox__content {
     padding: 2rem;
