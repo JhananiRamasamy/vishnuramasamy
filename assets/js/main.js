@@ -290,6 +290,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const swiper = new Swiper('.popup__swiper', {
+        loop: true,
+    });
+
+    const thumbnails = document.querySelectorAll('.thumbnail__img');
+    thumbnails.forEach((thumbnail, index) => {
+        thumbnail.addEventListener('click', () => {
+            swiper.slideToLoop(index); // Go to the slide based on the thumbnail index
+            thumbnails.forEach((thumb) => thumb.classList.remove('active'));
+            thumbnail.classList.add('active');
+        });
+    });
+
+    // Popup open/close handling
+    const openPopupButtons = document.querySelectorAll('.works__button');
+    const closePopupButtons = document.querySelectorAll('.work__modal-close');
+    openPopupButtons.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            const modal = e.currentTarget.closest('.workbox__content').querySelector('.work__modal');
+            modal.style.display = 'flex';
+        });
+    });
+
+    closePopupButtons.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            const modal = e.currentTarget.closest('.work__modal');
+            modal.style.display = 'none';
+        });
+    });
+});
+
 //   document.addEventListener('DOMContentLoaded', function() {
 //     var typingEffect = new Typed(".typedText", {
 //       strings: ["mechanical engineer", "metallurgist", "youtuber"],
